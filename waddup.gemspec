@@ -23,8 +23,13 @@ Gem::Specification.new do |s|
   s.add_dependency 'thor', '~> 0.18.1'
 
   s.add_development_dependency 'coveralls'
-  s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'simplecov'
+
+  if RUBY_VERSION >= '1.9.3'
+    s.add_development_dependency 'guard'
+    s.add_development_dependency 'guard-rspec'
+    s.add_development_dependency 'listen'
+  end
 end
