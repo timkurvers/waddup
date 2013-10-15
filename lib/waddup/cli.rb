@@ -3,6 +3,8 @@ require "chronic"
 module Waddup
 
   class CLI
+    THROUGH_ALIASES = %w[through upto until uptil to]
+
     alias run! initialize
 
     attr_reader :sources, :from, :to
@@ -17,9 +19,9 @@ module Waddup
     #
     # string - A String describing a source and a time span.
     def parse string
-      sources  = string[/with (.+) from/, 1]
-      from     = string[/from (.+) through/, 1]
-      to       = string[/through (.+)/, 1]
+      matches = string.match /with (.+) from (.+) (?:#{THROUGH_ALIASES.join "|"}) (.+)/
+
+      sources, from, to = matches[1..3]
 
       @sources = sources.split /, ?| ?and ?/
       @from    = Chronic.parse from
