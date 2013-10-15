@@ -1,8 +1,8 @@
 class Waddup::Source::AppleCalendar < Waddup::Source
 
-  # Requires AppleScript to be available and Apple Calender to be opened
+  # Requires AppleScript to be available
   def self.usable?
-    false
+    `osalang 2>&1`.include? 'AppleScript'
   end
 
 end
