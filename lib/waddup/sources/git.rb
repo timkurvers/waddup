@@ -46,10 +46,10 @@ class Waddup::Source::Git < Waddup::Source
   def events_for_repo(from, to, repo)
     log = `git log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'`
     log.scan(EXTRACT_PATTERN).map do |hash, datetime, subject|
-      Waddup::Event.new.tap do |e|
-        e.datetime = DateTime.parse(datetime)
-        e.subject = subject
+      Waddup::Event.new do |e|
+        e.at = DateTime.parse(datetime)
         e.source = self
+        e.subject = subject
       end
     end
   end
