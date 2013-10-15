@@ -17,12 +17,13 @@ module Waddup
     #
     # string - A String describing a source and a time span.
     def parse string
-      @sources = string[/with (.+) from/, 1]
+      sources  = string[/with (.+) from/, 1]
       from     = string[/from (.+) through/, 1]
       to       = string[/through (.+)/, 1]
 
-      @from = Chronic.parse from
-      @to   = Chronic.parse to
+      @sources = sources.split /, ?| ?and ?/
+      @from    = Chronic.parse from
+      @to      = Chronic.parse to
     end
 
   end
