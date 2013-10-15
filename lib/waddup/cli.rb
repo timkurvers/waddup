@@ -8,23 +8,21 @@ module Waddup
     attr_reader :sources, :from, :to
 
     def run! arguments
-      @sources, @from, @to = parse arguments
+      parse arguments
     end
+
+    private
 
     # Parse the given string.
     #
     # string - A String describing a source and a time span.
-    #
-    # Returns an Array describing sources, from and to.
     def parse string
-      sources = string[/with (.+) from/, 1]
-      from    = string[/from (.+) through/, 1]
-      to      = string[/through (.+)/, 1]
+      @sources = string[/with (.+) from/, 1]
+      from     = string[/from (.+) through/, 1]
+      to       = string[/through (.+)/, 1]
 
-      from = Chronic.parse from
-      to   = Chronic.parse to
-
-      [sources, from, to]
+      @from = Chronic.parse from
+      @to   = Chronic.parse to
     end
 
   end
