@@ -15,9 +15,14 @@ module Waddup
 
     private
 
-    # Parse the given string.
+    # Parse the given string into sources and a time span.
     #
-    # string - A String describing a source and a time span.
+    # string - A String describing sources and a time span.
+    #
+    # Examples:
+    #
+    #   "with mail from monday through friday"
+    #   "with mail, git and calendar from monday to friday"
     def parse string
       matches = string.match /with (.+) from (.+) (?:#{THROUGH_ALIASES.join "|"}) (.+)/
 
