@@ -7,6 +7,7 @@ class Waddup::Source::Git < Waddup::Source
   # Retrieves author and repositories on initialization
   #
   # Arguments
+  #
   #   :base_path (defaults to current working directory)
   #
   def initialize(base_path = Dir.pwd)
