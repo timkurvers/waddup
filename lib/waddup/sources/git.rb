@@ -9,7 +9,7 @@ class Waddup::Source::Git < Waddup::Source
   # Arguments
   #   :base_path (defaults to current working directory)
   #
-  def initialize base_path = Dir.pwd
+  def initialize(base_path = Dir.pwd)
     @author = `git config --get user.name`.chomp
     @repos = Dir["#{base_path}/**/.git"]
   end
