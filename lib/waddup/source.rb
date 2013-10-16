@@ -16,6 +16,11 @@ module Waddup
       raise NotImplementedError
     end
 
+    # Delegate for convenience
+    def usable?
+      self.class.usable?
+    end
+
     class << self
 
       # Whether this source is usable
