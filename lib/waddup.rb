@@ -1,4 +1,7 @@
 require 'waddup/event'
+require 'waddup/extension'
+require 'waddup/extensions/system'
+require 'waddup/extensions/applescript'
 require 'waddup/registry'
 require 'waddup/source'
 require 'waddup/sources/apple_calender'
