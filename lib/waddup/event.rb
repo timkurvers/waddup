@@ -2,7 +2,7 @@ module Waddup
 
   class Event
 
-    attr_accessor :at, :source, :subject
+    attr_accessor :at, :until, :source, :subject
 
     def initialize
       yield self if block_given?
