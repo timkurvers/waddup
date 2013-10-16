@@ -10,7 +10,7 @@ module Waddup
     #
     def run(command, options = {})
       command << ' 2>&1' if options[:quietly]
-      `#{command}`
+      `#{command}`.chomp
     end
 
   end
