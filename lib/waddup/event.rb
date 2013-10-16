@@ -1,5 +1,6 @@
 module Waddup
 
+  # Denotes an event obtained from a source
   class Event
 
     attr_accessor :at, :until, :source, :subject

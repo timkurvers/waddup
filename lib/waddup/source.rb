@@ -1,5 +1,7 @@
 module Waddup
 
+  # Denotes a possible source of events
+  # Note: Any subclasses are automatically registered
   class Source
     extend Waddup::Registry
 

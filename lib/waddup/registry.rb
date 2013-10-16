@@ -1,5 +1,6 @@
 module Waddup
 
+  # Automatically registers subclasses in its registry
   module Registry
 
     # Retrieves a static registry
