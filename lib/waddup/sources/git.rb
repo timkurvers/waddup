@@ -3,6 +3,7 @@ require 'pathname'
 module Waddup
 
   class Source::Git < Waddup::Source
+    include Waddup::Extension::System
     extend Waddup::Extension::System
 
     attr_accessor :author, :repos
@@ -47,7 +48,7 @@ module Waddup
     #   :repo (path)
     #
     def events_for_repo(from, to, repo)
-      log = `git log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'`
+      log = run "git log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'"
       log.scan(EXTRACT_PATTERN).map do |hash, datetime, subject|
         Waddup::Event.new do |e|
           e.at = DateTime.parse(datetime)
