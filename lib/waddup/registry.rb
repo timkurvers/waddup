@@ -1,13 +1,17 @@
-module Waddup::Registry
+module Waddup
 
-  # Retrieves a static registry
-  def registry
-    @registry ||= []
-  end
+  module Registry
 
-  # Registers given target in static registry
-  def inherited(target)
-    registry << target
+    # Retrieves a static registry
+    def registry
+      @registry ||= []
+    end
+
+    # Registers given target in static registry
+    def inherited(target)
+      registry << target
+    end
+
   end
 
 end

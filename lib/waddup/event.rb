@@ -1,9 +1,13 @@
-class Waddup::Event
+module Waddup
 
-  attr_accessor :at, :source, :subject
+  class Event
 
-  def initialize
-    yield self if block_given?
+    attr_accessor :at, :source, :subject
+
+    def initialize
+      yield self if block_given?
+    end
+
   end
 
 end

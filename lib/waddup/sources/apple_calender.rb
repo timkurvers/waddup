@@ -1,8 +1,12 @@
-class Waddup::Source::AppleCalendar < Waddup::Source
+module Waddup
 
-  # Requires AppleScript to be available
-  def self.usable?
-    `osalang 2>&1`.include? 'AppleScript'
+  class Source::AppleCalendar < Waddup::Source
+
+    # Requires AppleScript to be available
+    def self.usable?
+      `osalang 2>&1`.include? 'AppleScript'
+    end
+
   end
 
 end
