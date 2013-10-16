@@ -24,7 +24,7 @@ module Waddup
     #   "with mail from monday through friday"
     #   "with mail, git and calendar from monday to friday"
     def parse string
-      matches = string.match /with (.+) from (.+) (?:#{THROUGH_ALIASES.join "|"}) (.+)/
+      matches = string.match /with (.+) from (.+) (?:#{THROUGH_ALIASES.join '|'}) (.+)/
 
       sources, from, to = matches[1..3]
 
