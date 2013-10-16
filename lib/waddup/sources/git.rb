@@ -6,7 +6,7 @@ module Waddup
     include Waddup::Extension::System
     extend Waddup::Extension::System
 
-    attr_accessor :author, :repos
+    attr_accessor :base_path
 
     # Retrieves author and repositories on initialization
     #
@@ -15,8 +15,17 @@ module Waddup
     #   :base_path (defaults to current working directory)
     #
     def initialize(base_path = Dir.pwd)
-      @author = `git config --get user.name`.chomp
-      @repos = Dir["#{base_path}/**/.git"]
+      @base_path = base_path
+    end
+
+    # Obtains author from git-config
+    def author
+      @author ||= run 'git config --get user.name'
+    end
+
+    # Collects repositories under base-path
+    def repos
+      @repos ||= Dir["#{base_path}/**/.git"]
     end
 
     # Aggregates events from all repositories
