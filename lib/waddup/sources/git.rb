@@ -3,6 +3,7 @@ require 'pathname'
 module Waddup
 
   class Source::Git < Waddup::Source
+    extend Waddup::Extension::System
 
     attr_accessor :author, :repos
 
@@ -58,7 +59,7 @@ module Waddup
 
     # Requires Git to be installed successfully
     def self.usable?
-      `git --version 2>&1 /dev/null`
+      run 'git --version', quietly: true
       $?.success?
     end
 
