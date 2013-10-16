@@ -1,10 +1,11 @@
 module Waddup
 
   class Source::AppleMail < Waddup::Source
+    extend Waddup::Extension::AppleScript
 
     # Requires AppleScript to be available
     def self.usable?
-      `osalang 2>&1`.include? 'AppleScript'
+      applescript?
     end
 
   end
