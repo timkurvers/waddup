@@ -4,7 +4,17 @@ module Waddup
     include Waddup::Extension::System
 
     # Runs given AppleScript
-    def applescript(script)
+    #
+    # Options:
+    #
+    #   :args    (arguments to provide to the script)
+    #   :as_ruby (whether to parse result as Ruby)
+    #
+    def applescript(script, options = {})
+      args = options.delete(:args) || []
+      arguments = args.map { |arg| " '#{arg}'" }.join
+      result = run("osascript -s s -e '#{script}'#{arguments}")
+      eval result if options.delete(:as_ruby)
     end
 
     # Whether AppleScript is available
