@@ -5,6 +5,10 @@ module Waddup
 
     ALIAS = 'ical'
 
+    def events(from, to)
+      []
+    end
+
     # Requires AppleScript to be available
     def self.usable?
       applescript?
