@@ -6,6 +6,8 @@ module Waddup
     include Waddup::Extension::System
     extend Waddup::Extension::System
 
+    ALIAS = 'git'
+
     attr_accessor :base_path
 
     # Retrieves author and repositories on initialization
