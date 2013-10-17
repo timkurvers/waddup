@@ -8,13 +8,15 @@ module Waddup
     # Options:
     #
     #   :args    (arguments to provide to the script)
-    #   :as_ruby (whether to parse result as Ruby)
+    #   :as_ruby (whether to eval results as Ruby)
     #
     def applescript(script, options = {})
       args = options.delete(:args) || []
       arguments = args.map { |arg| " '#{arg}'" }.join
-      result = run("osascript -s s -e '#{script}'#{arguments}")
-      eval result if options.delete(:as_ruby)
+      results = run("osascript -s s -e '#{script}'#{arguments}")
+
+      # TODO: This is very scary, find alternatives!
+      eval "[#{results[1...-1]}]" if options.delete(:as_ruby)
     end
 
     # Whether AppleScript is available
