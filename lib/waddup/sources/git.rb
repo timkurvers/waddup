@@ -59,7 +59,7 @@ module Waddup
     #   :repo (path)
     #
     def events_for_repo(from, to, repo)
-      log = run "git log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'"
+      log = run "git --git-dir='#{repo}' log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'"
       log.scan(EXTRACT_PATTERN).map do |hash, datetime, subject|
         Waddup::Event.new do |e|
           e.at = DateTime.parse(datetime)
