@@ -1,0 +1,2 @@
+1ddb9c9 2013-10-16 23:04:45 +0200 Spec all the things™
+19e076c 2013-10-16 23:04:16 +0200 Morph Git#author and Git#repos into lazy getters
