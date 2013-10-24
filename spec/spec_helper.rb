@@ -8,3 +8,5 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start
 
 require 'waddup'
+
+Dir['./spec/support/**/*.rb'].sort.each { |file| require file }
