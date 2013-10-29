@@ -23,7 +23,7 @@ module Waddup
             set mboxes to (messages whose sender contains username and date sent >= window_from and date sent <= window_to) in every mailbox in acct
             repeat with mbox in mboxes
               repeat with msg in mbox
-                set the end of results to {datetime:date sent of msg as string, subject:subject of msg}
+                set the end of results to {subject:subject of msg, datetime:date sent of msg as string}
               end
             end repeat
           end repeat
