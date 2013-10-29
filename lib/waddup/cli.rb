@@ -7,9 +7,9 @@ module Waddup
     attr_accessor :sources, :from, :to
 
     KEYWORDS = {
-      sources:  %w[with],
-      from:     %w[from since],
-      to:       %w[to until uptil upto through]
+      :sources => %w[with],
+      :from    => %w[from since],
+      :to      => %w[to until uptil upto through]
     }
 
     KEYWORD_BOUNDARY = "(?:\\s#{KEYWORDS.values.flatten.join('|\\s')}|\\Z)"

@@ -45,7 +45,7 @@ describe Waddup::Source::Git do
   describe '#events_for_repo' do
     before do
       subject.stub_shell "git --git-dir='/waddup/.git' log --author='John Doe' --since='2013-10-16T00:00:00+00:00' --until='2013-10-17T00:00:00+00:00' --format='format:%h %ai %s'",
-        output: fixture('sources/git.log')
+        :output => fixture('sources/git.log')
     end
 
     it 'aggregates events for given repo' do
@@ -82,7 +82,7 @@ describe Waddup::Source::Git do
   describe '::usable?' do
     context 'when git is available' do
       before do
-        described_class.stub_shell 'git --version 2>&1', exitstatus: 0
+        described_class.stub_shell 'git --version 2>&1', :exitstatus => 0
       end
 
       it { should be_usable }
@@ -90,7 +90,7 @@ describe Waddup::Source::Git do
 
     context 'when git is unavailable' do
       before do
-        described_class.stub_shell 'git --version 2>&1', exitstatus: 1
+        described_class.stub_shell 'git --version 2>&1', :exitstatus => 1
       end
 
       it { should_not be_usable }

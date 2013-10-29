@@ -7,7 +7,7 @@ describe Waddup::Source::AppleMail do
   describe '#events' do
     before do
       subject.stub_shell "osascript -s s -e '#{described_class::SENT_MAIL_SCRIPT}' '16/10/2013 00:00' '17/10/2013 00:00'",
-        output: fixture('sources/apple_mail.results')
+        :output => fixture('sources/apple_mail.results')
     end
 
     it 'aggregates events' do
@@ -28,7 +28,7 @@ describe Waddup::Source::AppleMail do
 
       context 'when AppleScript is available' do
         before do
-          described_class.stub_shell 'osalang 2>&1', output: 'AppleScript'
+          described_class.stub_shell 'osalang 2>&1', :output => 'AppleScript'
         end
 
         it { should be_usable }
@@ -36,7 +36,7 @@ describe Waddup::Source::AppleMail do
 
       context 'when AppleScript is unavailable' do
         before do
-          described_class.stub_shell 'osalang 2>&1', exitstatus: 1
+          described_class.stub_shell 'osalang 2>&1', :exitstatus => 1
         end
 
         it { should_not be_usable }
