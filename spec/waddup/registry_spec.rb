@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Waddup::Registry do
 
   let(:dummy)  {
-    class Dummy
+    Class.new do
       extend Waddup::Registry
     end
   }
