@@ -6,6 +6,10 @@ module Waddup
 
     ALIAS = 'mail'
 
+    # Until OSX Mavericks handles Gmail's sent-mailbox correctly, resort to
+    # iterating through all mailboxes and identify sent messages by sender
+    #
+    # See: http://tidbits.com/article/14219
     SENT_MAIL_SCRIPT = %Q{
       on run argv
         set window_from to date (item 1 of argv)
@@ -15,9 +19,12 @@ module Waddup
           set results to {}
 
           repeat with acct in every account
-            set msgs to (messages whose (date sent is greater than or equal to window_from) and (date sent is less than or equal to window_to)) in mailbox "Sent" in acct
-            repeat with msg in msgs
-              set the end of results to {datetime:date sent of msg as string, subject:subject of msg}
+            set username to user name of acct
+            set mboxes to (messages whose sender contains username and date sent >= window_from and date sent <= window_to) in every mailbox in acct
+            repeat with mbox in mboxes
+              repeat with msg in mbox
+                set the end of results to {datetime:date sent of msg as string, subject:subject of msg}
+              end
             end repeat
           end repeat
 
@@ -36,7 +43,7 @@ module Waddup
     def events(from, to)
       results = applescript SENT_MAIL_SCRIPT,
         as_ruby: true,
-        args: [from.strftime('%m-%d-%Y %H:%M'), to.strftime('%m-%d-%Y %H:%M')]
+        args: [from.strftime('%d/%m/%Y %H:%M'), to.strftime('%d/%m/%Y %H:%M')]
 
       results.map do |result|
         Waddup::Event.new do |e|
