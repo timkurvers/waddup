@@ -5,6 +5,7 @@ module Waddup
     extend Waddup::Extension::AppleScript
 
     ALIAS = 'ical'
+    ICON  = "\xF0\x9F\x93\x85 "
 
     EVENT_SCRIPT = %Q{
       on run argv

@@ -7,6 +7,7 @@ module Waddup
     extend Waddup::Extension::System
 
     ALIAS = 'git'
+    ICON  = "\xE2\x9C\x8F\xEF\xB8\x8F "
 
     attr_accessor :base_path
 

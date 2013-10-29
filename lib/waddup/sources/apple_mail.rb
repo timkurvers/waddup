@@ -5,6 +5,7 @@ module Waddup
     extend Waddup::Extension::AppleScript
 
     ALIAS = 'mail'
+    ICON  = "\xE2\x9C\x89\xEF\xB8\x8F "
 
     # Until OSX Mavericks handles Gmail's sent-mailbox correctly, resort to
     # iterating through all mailboxes and identify sent messages by sender

@@ -64,7 +64,7 @@ module Waddup
         puts day.strftime('%A, %-d %B %Y')
         puts
         events.each do |event|
-          puts "  #{event.at.strftime('%H:%M')}  #{event.label}"
+          puts "  #{event.at.strftime('%H:%M')}  #{event.source.class::ICON}  #{event.label}"
         end
       end
 
