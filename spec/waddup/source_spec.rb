@@ -27,6 +27,10 @@ describe Waddup::Source do
 
   describe '::usable' do
     it 'retrieves usable sources' do
+      described_class.registry.each do |source|
+        source.stub(:usable?).and_return true
+      end
+
       expect(described_class.usable).to be_an Array
     end
   end
