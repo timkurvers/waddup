@@ -47,9 +47,9 @@ module Waddup
 
       results.map do |result|
         Waddup::Event.new do |e|
-          e.at = DateTime.parse(result[:datetime])
+          e.label  = result[:subject]
+          e.at     = DateTime.parse(result[:datetime])
           e.source = self
-          e.subject = "Sent mail: #{result[:subject]}"
         end
       end
     end

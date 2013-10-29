@@ -59,14 +59,31 @@ module Waddup
     #   :repo (path)
     #
     def events_for_repo(from, to, repo)
+      repo_label = self.class.label_for_repo repo
+
       results = run "git --git-dir='#{repo}' log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'"
       results.scan(EXTRACT_PATTERN).map do |hash, datetime, subject|
         Waddup::Event.new do |e|
-          e.at = DateTime.parse(datetime)
+          e.label  = "[#{repo_label}] #{subject}"
+          e.at     = DateTime.parse(datetime)
           e.source = self
-          e.subject = subject
         end
       end
+    end
+
+    # Generates label for given repo path
+    def self.label_for_repo(repo)
+      path = Pathname.new(repo)
+      parent = path.parent
+
+      case parent.basename.to_s
+      when 'code', 'design'
+        parent = parent.parent
+      end
+
+      return nil if parent.root?
+
+      parent.basename.to_s
     end
 
     # Requires Git to be installed successfully

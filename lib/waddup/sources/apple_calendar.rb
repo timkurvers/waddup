@@ -40,7 +40,7 @@ module Waddup
 
       results.map do |result|
         Waddup::Event.new do |e|
-          e.subject = result[:summary]
+          e.label   = result[:summary]
           e.at      = DateTime.parse(result[:start_date])
           e.until   = DateTime.parse(result[:end_date])
           e.source  = self
