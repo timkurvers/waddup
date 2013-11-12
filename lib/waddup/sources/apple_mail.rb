@@ -8,7 +8,7 @@ module Waddup
     ICON  = "\xE2\x9C\x89\xEF\xB8\x8F "
 
     # Until OSX Mavericks handles Gmail's sent-mailbox correctly, resort to
-    # iterating through all mailboxes and identify sent messages by sender
+    # iterating through all mail and identify sent messages by sender
     #
     # See: http://tidbits.com/article/14219
     SENT_MAIL_SCRIPT = %Q{
@@ -21,12 +21,16 @@ module Waddup
 
           repeat with acct in every account
             set username to user name of acct
-            set mboxes to (messages whose sender contains username and date sent >= window_from and date sent <= window_to) in every mailbox in acct
-            repeat with mbox in mboxes
-              repeat with msg in mbox
-                set the end of results to {subject:subject of msg, datetime:date sent of msg as string}
-              end
-            end repeat
+            try
+              set mbox to mailbox "[Gmail]/All Mail" of acct
+            on error
+              set mbox to mailbox "Sent" of acct
+            end try
+
+            set msgs to (messages whose sender contains username and date sent >= window_from and date sent <= window_to) in mbox
+            repeat with msg in msgs
+              set the end of results to {subject:subject of msg, datetime:date sent of msg as string}
+            end
           end repeat
 
           results
