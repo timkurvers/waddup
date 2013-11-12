@@ -1,25 +1,31 @@
-# Raised when shell operations are invoked
-class ShellNotAllowedError < StandardError
+module ShellMock
 
-  def initialize(command)
-    msg =  "Shell operation is not allowed: #{command}\n\n"
-    msg << "You can stub this request with the following snippet:\n\n"
-    msg << "stub_shell(\"#{command}\", :output => '', :exitstatus => 0)\n "
-    super msg
+  # Raised when shell operations are invoked
+  class ShellNotAllowedError < StandardError
+
+    def initialize(command)
+      msg =  "Shell operation is not allowed: #{command}\n\n"
+      msg << "You can stub this request with the following snippet:\n\n"
+      msg << "stub_shell(\"#{command}\", :output => '', :exitstatus => 0)\n "
+      super msg
+    end
+
+  end
+
+  # Applies shell mock functionality
+  def self.apply!
+    Object.any_instance.stub(:`).and_return do |foo|
+      raise ShellNotAllowedError, foo
+    end
+
+    Object.any_instance.stub(:system).and_return do |command|
+      raise ShellNotAllowedError, command
+    end
   end
 
 end
 
-# Prevent invoking shell operations
 class Object
-
-  def `(command)
-    raise ShellNotAllowedError, command
-  end
-
-  def system(command)
-    raise ShellNotAllowedError, command
-  end
 
   # Stubs shell operations matching given command
   #
