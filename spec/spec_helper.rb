@@ -13,7 +13,7 @@ require 'waddup'
 
 Dir['./spec/support/**/*.rb'].sort.each { |file| require file }
 
-Rspec.configure do |config|
+RSpec.configure do |config|
 
   # Helper modules
   config.extend ShellMock
