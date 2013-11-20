@@ -62,7 +62,7 @@ module Waddup
     def events_for_repo(from, to, repo)
       repo_label = self.class.label_for_repo repo
 
-      results = run "git --git-dir='#{repo}' log --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'"
+      results = run "git --git-dir='#{repo}' log --all --no-merges --author='#{author}' --since='#{from.iso8601}' --until='#{to.iso8601}' --format='format:#{GIT_FORMAT}'"
       results.scan(EXTRACT_PATTERN).map do |hash, datetime, subject|
         Waddup::Event.new do |e|
           e.label  = "[#{repo_label}] #{subject}"

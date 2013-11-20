@@ -44,7 +44,7 @@ describe Waddup::Source::Git do
 
   describe '#events_for_repo' do
     before do
-      subject.stub_shell "git --git-dir='/waddup/.git' log --author='John Doe' --since='2013-10-16T00:00:00+00:00' --until='2013-10-17T00:00:00+00:00' --format='format:%h %ai %s'",
+      subject.stub_shell "git --git-dir='/waddup/.git' log --all --no-merges --author='John Doe' --since='2013-10-16T00:00:00+00:00' --until='2013-10-17T00:00:00+00:00' --format='format:%h %ai %s'",
         :output => fixture('sources/git.log')
     end
 
