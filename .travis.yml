@@ -6,4 +6,4 @@ rvm:
   - 2.0.0
   - rbx-18mode
   - rbx-19mode
-script: bundle exec rake test
+script: bundle exec rake spec
