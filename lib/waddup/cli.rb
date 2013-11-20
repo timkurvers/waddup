@@ -23,11 +23,11 @@ module Waddup
       end
 
       parse_keyword :from do |match|
-        @from = Chronic.parse match[1]
+        @from = Chronic.parse match[1], context: :past
       end
 
       parse_keyword :to do |match|
-        @to = Chronic.parse match[1]
+        @to = Chronic.parse match[1], context: :past
       end
     end
 
