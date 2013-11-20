@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Waddup::Source::AppleMail do
-  let(:from) { DateTime.new 2013, 10, 16 }
-  let(:to)   { DateTime.new 2013, 10, 17 }
+  let(:from) { DateTime.new(2013, 10, 16) }
+  let(:to)   { DateTime.new(2013, 10, 17) }
 
   describe '#events' do
     before do
