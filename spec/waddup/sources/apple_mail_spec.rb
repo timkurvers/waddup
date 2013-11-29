@@ -6,7 +6,7 @@ describe Waddup::Source::AppleMail do
 
   describe '#events' do
     before do
-      subject.stub_shell "osascript -s s -e '#{described_class::SENT_MAIL_SCRIPT}' '16/10/2013 00:00' '17/10/2013 00:00'",
+      subject.stub_shell "osascript -s s '#{described_class::SENT_MAIL_SCRIPT}' '16/10/2013 00:00' '17/10/2013 00:00'",
         :output => fixture('sources/apple_mail.results')
     end
 

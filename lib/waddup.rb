@@ -1,5 +1,6 @@
 require 'waddup/event'
 require 'waddup/extension'
+require 'waddup/extensions/file_system'
 require 'waddup/extensions/system'
 require 'waddup/extensions/applescript'
 require 'waddup/registry'

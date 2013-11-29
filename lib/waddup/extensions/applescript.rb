@@ -3,7 +3,7 @@ module Waddup
   module Extension::AppleScript
     include Waddup::Extension::System
 
-    # Runs given AppleScript
+    # Runs given AppleScript on disk
     #
     # Options:
     #
@@ -13,7 +13,7 @@ module Waddup
     def applescript(script, options = {})
       args = options.delete(:args) || []
       arguments = args.map { |arg| " '#{arg}'" }.join
-      results = run("osascript -s s -e '#{script}'#{arguments}")
+      results = run("osascript -s s '#{script}'#{arguments}")
 
       # TODO: This is very scary, find alternatives!
       eval "[#{results[1...-1]}]" if options.delete(:as_ruby)
