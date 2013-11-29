@@ -5,7 +5,7 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'waddup/metadata'
 
 Gem::Specification.new do |s|
-  s.name        = Waddup::NAME
+  s.name        = 'waddup'
   s.version     = Waddup::VERSION
   s.authors     = ['Tim Kurvers']
   s.email       = ['tim@moonsphere.net']
