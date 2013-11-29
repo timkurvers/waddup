@@ -1,6 +1,3 @@
 #!/usr/bin/env ruby
 
-require 'waddup'
 require 'waddup/cli'
-
-Waddup::CLI.new.run! ARGV
