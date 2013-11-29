@@ -2,16 +2,16 @@
 
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'waddup/version'
+require 'waddup/metadata'
 
 Gem::Specification.new do |s|
-  s.name        = 'waddup'
+  s.name        = Waddup::NAME
   s.version     = Waddup::VERSION
   s.authors     = ['Tim Kurvers']
   s.email       = ['tim@moonsphere.net']
   s.homepage    = 'https://github.com/timkurvers/waddup'
-  s.summary     = 'Waddup retraces your activities from arbitrary sources such as version control, issue tracking software and mail clients'
-  s.description = 'Waddup retraces your activities from arbitrary sources - such as version control, issue tracking software and mail clients - and displays them in a neat chronological overview'
+  s.summary     = Waddup::SUMMARY
+  s.description = "#{Waddup::SUMMARY} - and displays them in a neat chronological overview"
 
   s.rubyforge_project = 'waddup'
 
