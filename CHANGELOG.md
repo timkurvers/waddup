@@ -1,5 +1,12 @@
 # Changelog
 
+### v0.1.0 - November 29, 2013
+- Drop support for 1.8.7 and 1.9.2.
+- From/to arguments are treated as past by default.
+- Git source considers all branches and excludes merge commits.
+- Events obtained through AppleScript are now sorted correctly.
+- Improve Apple Mail source performance.
+
 ### v0.0.2 - October 30, 2013
 - Initial alpha release with Git, Apple Mail and Apple Calender sources.
 
