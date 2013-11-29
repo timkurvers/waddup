@@ -25,7 +25,7 @@ module Waddup
       results.map do |result|
         Waddup::Event.new do |e|
           e.label  = result[:subject]
-          e.at     = DateTime.parse(result[:datetime])
+          e.at     = Time.parse(result[:datetime])
           e.source = self
         end
       end

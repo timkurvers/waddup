@@ -66,7 +66,7 @@ module Waddup
       results.scan(EXTRACT_PATTERN).map do |hash, datetime, subject|
         Waddup::Event.new do |e|
           e.label  = "[#{repo_label}] #{subject}"
-          e.at     = DateTime.parse(datetime)
+          e.at     = Time.parse(datetime)
           e.source = self
         end
       end
