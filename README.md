@@ -81,3 +81,12 @@ To specify an end date, use one of `to`, `until`, `uptil`, `upto` or `through`:
     waddup through yesterday
 
 Defaults to right now if an end date is ommitted.
+
+
+### Formats
+
+At present, Waddup supports two formats: visual (see screenshot) and JSON.
+
+Use the `--format` flag to indicate the desired output format:
+
+    waddup since yesterday --format json
