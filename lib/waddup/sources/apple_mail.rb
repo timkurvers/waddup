@@ -19,8 +19,8 @@ module Waddup
     #
     def events(from, to)
       results = applescript SENT_MAIL_SCRIPT,
-        :as_ruby => true,
-        :args    => [from.strftime('%d/%m/%Y %H:%M'), to.strftime('%d/%m/%Y %H:%M')]
+        as_ruby: true,
+        args:    [from.strftime('%d/%m/%Y %H:%M'), to.strftime('%d/%m/%Y %H:%M')]
 
       results.map do |result|
         Waddup::Event.new do |e|

@@ -89,7 +89,7 @@ module Waddup
 
     # Requires Git to be installed successfully
     def self.usable?
-      run 'git --version', :quietly => true
+      run 'git --version', quietly: true
       $?.success?
     end
 

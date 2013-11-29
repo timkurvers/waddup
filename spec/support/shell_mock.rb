@@ -6,7 +6,7 @@ module ShellMock
     def initialize(command)
       msg =  "Shell operation is not allowed: #{command}\n\n"
       msg << "You can stub this request with the following snippet:\n\n"
-      msg << "stub_shell(\"#{command}\", :output => '', :exitstatus => 0)\n "
+      msg << "stub_shell(\"#{command}\", output: '', exitstatus: 0)\n "
       super msg
     end
 

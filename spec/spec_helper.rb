@@ -23,7 +23,7 @@ RSpec.configure do |config|
   end
 
   # Allow focussing on individual specs
-  config.filter_run :focus => true
+  config.filter_run focus: true
   config.run_all_when_everything_filtered = true
 
   # Run specs in random order to surface order dependencies

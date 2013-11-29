@@ -22,7 +22,7 @@ module Waddup
     # Whether AppleScript is available
     def applescript?
       osx? && begin
-        run('osalang', :quietly => true).include? 'AppleScript'
+        run('osalang', quietly: true).include? 'AppleScript'
       end
     end
 
