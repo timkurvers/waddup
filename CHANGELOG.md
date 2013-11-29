@@ -1,5 +1,9 @@
 # Changelog
 
+### v0.2.0 - November 29, 2013
+- Proper CLI implementation supporting `--version` and `--help`.
+- Visual and JSON output support using `--format`.
+
 ### v0.1.0 - November 29, 2013
 - Drop support for 1.8.7 and 1.9.2.
 - From/to arguments are treated as past by default.
