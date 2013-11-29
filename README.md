@@ -10,7 +10,7 @@ Waddup is a Ruby gem that retraces your activities from arbitrary sources - such
 
 Perfect for those who have lost track of what they have worked on.
 
-**Supported Ruby versions: 1.8.7 or higher**
+**Supported Ruby versions: 1.9.3 or higher**
 
 Licensed under the **MIT** license, see LICENSE for more information.
 
