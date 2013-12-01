@@ -55,6 +55,8 @@ module Waddup
       c.description = 'Aggregates events and generates timesheet between from and to range'
       c.option '--format visual | json', String, 'Provides timesheet in specified format'
       c.action do |args, options|
+        options.default format: 'visual'
+
         parse! args
 
         # Sanity checking
