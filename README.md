@@ -1,10 +1,10 @@
 # Waddup
 
-[![Gem Version](https://badge.fury.io/rb/waddup.png)](https://rubygems.org/gems/waddup)
-[![Build Status](https://secure.travis-ci.org/timkurvers/waddup.png?branch=master)](https://travis-ci.org/timkurvers/waddup)
-[![Dependency Status](https://gemnasium.com/timkurvers/waddup.png)](https://gemnasium.com/timkurvers/waddup)
-[![Code Climate](https://codeclimate.com/github/timkurvers/waddup.png)](https://codeclimate.com/github/timkurvers/waddup)
-[![Coverage Status](https://coveralls.io/repos/timkurvers/waddup/badge.png?branch=master)](https://coveralls.io/r/timkurvers/waddup)
+[![Gem Version](https://img.shields.io/gem/v/waddup.svg)](https://rubygems.org/gems/waddup)
+[![Build Status](https://img.shields.io/travis/timkurvers/waddup.svg)](https://travis-ci.org/timkurvers/waddup)
+[![Dependency Status](https://img.shields.io/gemnasium/timkurvers/waddup.svg)](https://gemnasium.com/timkurvers/waddup)
+[![Code Climate](https://img.shields.io/codeclimate/github/timkurvers/waddup.svg)](https://codeclimate.com/github/timkurvers/waddup)
+[![Coverage Status](https://img.shields.io/coveralls/timkurvers/waddup.svg)](https://coveralls.io/r/timkurvers/waddup)
 
 Waddup is a Ruby gem that retraces your activities from arbitrary sources - such as version control, issue tracking software and mail clients - and displays them in a neat chronological overview.
 
