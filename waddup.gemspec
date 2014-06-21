@@ -23,13 +23,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'chronic',   '~> 0.10.2'
   s.add_dependency 'commander', '~> 4.1.5'
 
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rspec', '~> 2.x'
-
+  s.add_development_dependency 'coveralls'
   s.add_development_dependency 'guard'
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'listen'
-
-  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rspec', '~> 2.x'
   s.add_development_dependency 'simplecov'
 end
