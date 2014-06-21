@@ -14,11 +14,11 @@ module ShellMock
 
   # Applies shell mock functionality
   def self.apply!
-    Object.any_instance.stub(:`).and_return do |foo|
-      raise ShellNotAllowedError, foo
+    Object.any_instance.stub(:`) do |object, command|
+      raise ShellNotAllowedError, command
     end
 
-    Object.any_instance.stub(:system).and_return do |command|
+    Object.any_instance.stub(:system) do |object, command|
       raise ShellNotAllowedError, command
     end
   end
@@ -37,7 +37,7 @@ class Object
     output = options.delete(:output) || ''
     exitstatus = options.delete(:exitstatus) || 0
 
-    block = lambda {
+    block = lambda { |command|
       if exitstatus.nonzero?
         Kernel.send :`, "test"
       else
@@ -46,8 +46,8 @@ class Object
       output
     }
 
-    stub(:`).with(command).and_return &block
-    stub(:system).with(command).and_return &block
+    stub(:`).with(command, &block)
+    stub(:system).with(command, &block)
   end
 
 end
