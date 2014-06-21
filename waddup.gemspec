@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'commander', '~> 4.1.5'
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec', '~> 2.x'
 
   s.add_development_dependency 'guard'
   s.add_development_dependency 'guard-rspec'
