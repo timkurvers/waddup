@@ -1,5 +1,9 @@
 # Changelog
 
+### v0.2.2 - November 12, 2014
+
+- Simplify sent mail AppleScript.
+
 
 ### v0.2.1 - December 1, 2013
 
