@@ -43,7 +43,7 @@ waddup with git and mail since last week through yesterday 23:00
 ```
 
 Waddup is fairly liberal in what it accepts. The keywords described below may be
-mixed or ommitted as desired.
+mixed or omitted as desired.
 
 ### Sources
 
@@ -64,7 +64,7 @@ waddup with git
 waddup with git, mail and ical
 ```
 
-When the `with`-keyword is ommitted it will default to all usable sources.
+When the `with`-keyword is omitted it will default to all usable sources.
 
 ### Start date
 
@@ -78,7 +78,7 @@ waddup from october 29, 2013 9:00 AM
 waddup since last friday
 ```
 
-Defaults to right now if a start date is ommitted. This default is likely to
+Defaults to right now if a start date is omitted. This default is likely to
 change in the future.
 
 Dates/times are liberally parsed using [Chronic]. A grasp of crazy inputs one
@@ -102,7 +102,7 @@ waddup upto one week ago
 waddup through yesterday
 ```
 
-Defaults to right now if an end date is ommitted.
+Defaults to right now if an end date is omitted.
 
 ### Formats
 
