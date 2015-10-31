@@ -4,17 +4,14 @@
 
 - Simplify sent mail AppleScript.
 
-
 ### v0.2.1 - December 1, 2013
 
 - Default timesheet format to visual.
-
 
 ### v0.2.0 - November 29, 2013
 
 - Proper CLI implementation supporting `--version` and `--help`.
 - Visual and JSON output support using `--format`.
-
 
 ### v0.1.0 - November 29, 2013
 
@@ -24,11 +21,9 @@
 - Events obtained through AppleScript are now sorted correctly.
 - Improve Apple Mail source performance.
 
-
 ### v0.0.2 - October 30, 2013
 
 - Initial alpha release with Git, Apple Mail and Apple Calender sources.
-
 
 ### v0.0.1 - October 9, 2013
 
