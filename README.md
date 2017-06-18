@@ -16,7 +16,7 @@ Perfect for those who have lost track of what they have worked on.
 
 Licensed under the **MIT** license, see LICENSE for more information.
 
-![Waddup](http://office.moonsphere.net/waddup.png?v1)
+![Waddup](https://user-images.githubusercontent.com/378235/27263652-30b4fc90-546e-11e7-80eb-965e33957b1e.png)
 
 ## Installation
 
