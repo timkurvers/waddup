@@ -13,7 +13,7 @@ Perfect for those who have lost track of what they have worked on.
 
 **Supported Ruby versions: 2.2 or higher**
 
-Licensed under the **MIT** license, see LICENSE for more information.
+Licensed under the [**MIT** license](LICENSE.md).
 
 ![Waddup](https://user-images.githubusercontent.com/378235/27263652-30b4fc90-546e-11e7-80eb-965e33957b1e.png)
 
