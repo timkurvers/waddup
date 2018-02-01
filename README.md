@@ -1,7 +1,7 @@
 # Waddup
 
-[![Gem Version](https://img.shields.io/gem/v/waddup.svg?style=flat)](https://rubygems.org/gems/waddup)
-[![Build Status](https://img.shields.io/travis/timkurvers/waddup.svg?style=flat)](https://travis-ci.org/timkurvers/waddup)
+[![Gem Version](https://img.shields.io/gem/v/waddup.svg)](https://rubygems.org/gems/waddup)
+[![Build Status](https://img.shields.io/travis/timkurvers/waddup.svg)](https://travis-ci.org/timkurvers/waddup)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/timkurvers/waddup.svg)](https://codeclimate.com/github/timkurvers/waddup)
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/timkurvers/waddup.svg)](https://codeclimate.com/github/timkurvers/waddup)
 
