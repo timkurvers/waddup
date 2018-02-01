@@ -2,8 +2,8 @@
 
 [![Gem Version](https://img.shields.io/gem/v/waddup.svg?style=flat)](https://rubygems.org/gems/waddup)
 [![Build Status](https://img.shields.io/travis/timkurvers/waddup.svg?style=flat)](https://travis-ci.org/timkurvers/waddup)
-[![Code Climate](https://img.shields.io/codeclimate/github/timkurvers/waddup.svg?style=flat)](https://codeclimate.com/github/timkurvers/waddup)
-[![Coverage Status](https://img.shields.io/coveralls/timkurvers/waddup.svg?style=flat)](https://coveralls.io/r/timkurvers/waddup)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/timkurvers/waddup.svg)](https://codeclimate.com/github/timkurvers/waddup)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/timkurvers/waddup.svg)](https://codeclimate.com/github/timkurvers/waddup)
 
 Waddup is a Ruby gem that retraces your activities from arbitrary sources - such
 as version control, issue tracking software and mail clients - and displays them
