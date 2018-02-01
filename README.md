@@ -11,7 +11,7 @@ in a neat chronological overview.
 
 Perfect for those who have lost track of what they have worked on.
 
-**Supported Ruby versions: 1.9.3 or higher**
+**Supported Ruby versions: 2.2 or higher**
 
 Licensed under the **MIT** license, see LICENSE for more information.
 
